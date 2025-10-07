@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC LEGUE - Nepal's Ultimate Tournament App</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Join EPIC LEGUE, Nepal's ultimate esports arena for mobile gaming tournaments. Play your favorite games like BGMI, Free Fire, and more. Win exciting prizes and enjoy instant withdrawals. Download now and get a signup bonus!">
+    <meta name="keywords" content="esports, mobile gaming, tournaments, BGMI, Free Fire, Pubg New State, online gaming, win cash, Nepal gaming, EPIC LEGUE">
+    <meta name="author" content="EPIC LEGUE">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.ibb.co/tg5W5MJ/file-00000000f95c61faac55de9bfcaf23f0.png" type="image/png">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <style>
+        /*--------------------------------------------------------------
+        # Variables and Base Styles
+        --------------------------------------------------------------*/
+        :root {
+            --primary-bg: #0F172A;
+            --secondary-bg: #1E293B;
+            --text-primary: #E2E8F0;
+            --text-secondary: #94A3B8;
+            --accent-color: #FACC15;
+            --border-color: #334155;
+            --blur-bg: rgba(15, 23, 42, 0.8);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .text-accent {
+            color: var(--accent-color) !important;
+        }
+
+        .bg-accent {
+            background-color: var(--accent-color) !important;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: var(--primary-bg);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 4px 20px rgba(250, 204, 21, 0.2);
+        }
+
+        .btn-accent:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary-custom {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: none;
+            font-weight: 500;
+        }
+        
+        .btn-secondary-custom:hover {
+            color: var(--accent-color);
+        }
+
+        /*--------------------------------------------------------------
+        # Header/Navbar
+        --------------------------------------------------------------*/
+        .navbar {
+            background-color: var(--blur-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+        }
+
+        .navbar-brand span {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+            color: var(--accent-color);
+        }
+
+        .dropdown-menu {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+        }
+        .dropdown-item {
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+        .dropdown-item:hover {
+            background-color: var(--primary-bg);
+            color: var(--accent-color);
+        }
+        .navbar-toggler {
+            border-color: var(--border-color);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28226, 232, 240, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+
+        /*--------------------------------------------------------------
+        # Hero Section
+        --------------------------------------------------------------*/
+        #hero {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle, rgba(30, 41, 59, 0.5) 0%, var(--primary-bg) 70%);
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        #hero p {
+            max-width: 600px;
+            margin: 20px auto 30px auto;
+            font-size: 1.1rem;
+        }
+        
+        .hero-image {
+            max-width: 250px;
+            margin-top: 40px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Fade-in-up Animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*--------------------------------------------------------------
+        # Game Slider Section
+        --------------------------------------------------------------*/
+        #games {
+            background-color: var(--secondary-bg);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        .swiper-slide {
+            width: 200px;
+            height: 250px;
+            background: var(--primary-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        .swiper-slide:hover {
+            transform: scale(1.05);
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /*--------------------------------------------------------------
+        # How It Works Section
+        --------------------------------------------------------------*/
+        .step-card {
+            background-color: var(--secondary-bg);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        .step-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .step-card::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 6rem;
+            font-weight: 800;
+            color: rgba(51, 65, 85, 0.5);
+            z-index: 0;
+        }
+        .step-card .step-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .step-card h3 {
+            position: relative;
+            z-index: 1;
+        }
+         .step-card p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /*--------------------------------------------------------------
+        # Features Section
+        --------------------------------------------------------------*/
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .feature-item .icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+        .feature-item h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /*--------------------------------------------------------------
+        # FAQ Section
+        --------------------------------------------------------------*/
+        .accordion-item {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 10px;
+            border-radius: 8px !important;
+        }
+        .accordion-header .accordion-button {
+            background-color: var(--secondary-bg);
+            color: var(--text-primary);
+            font-weight: 600;
+            box-shadow: none;
+        }
+        .accordion-header .accordion-button:not(.collapsed) {
+            background-color: var(--primary-bg);
+            color: var(--accent-color);
+        }
+        .accordion-body {
+            color: var(--text-secondary);
+        }
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2394a3b8'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FACC15'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        /*--------------------------------------------------------------
+        # Footer
+        --------------------------------------------------------------*/
+        #footer {
+            background-color: var(--secondary-bg);
+            padding: 40px 0;
+            text-align: center;
+        }
+        #footer p {
+            margin: 0;
+        }
+
+        /*--------------------------------------------------------------
+        # Sticky Download Bar (Mobile Only)
+        --------------------------------------------------------------*/
+        .sticky-download-bar {
+            display: none; /* Hidden by default */
+        }
+
+        @media (max-width: 767.98px) {
+            .sticky-download-bar {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-bg);
+                padding: 15px;
+                box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+                z-index: 1000;
+            }
+            .sticky-download-bar .btn {
+                width: 100%;
+                font-size: 1.1rem;
+            }
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-padding {
+                padding: 60px 0;
+            }
+            .navbar .btn-accent {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+        
+        /*--------------------------------------------------------------
+        # Modals
+        --------------------------------------------------------------*/
+        .modal-content {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        .modal-header {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .modal-footer {
+            border-top: 1px solid var(--border-color);
+        }
+        .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+        .modal-body p {
+            color: var(--text-secondary);
+        }
+        .modal-body h5 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
+
+    <!-- ======= Header/Navbar ======= -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://i.ibb.co/tg5W5MJ/file-00000000f95c61faac55de9bfcaf23f0.png" alt="EPIC LEGUE Logo" class="me-2">
+                <span class="text-white">EPIC LEGUE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How to Play</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#faq">FAQ</a></li>
+                            <li><hr class="dropdown-divider" style="border-color: var(--border-color);"></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Privacy Policy</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms & Conditions</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#fairPlayModal">Fair Play Policy</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#refundModal">Refund & Cancellation</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="https://www.mediafire.com/file/k2xj9se2e9gnzx5/Epic_league.apk/file" class="btn btn-accent">Download App</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container text-center">
+            <div class="fade-in-up">
+                <h1 class="mb-3">Nepal's Ultimate <span class="text-accent">Esports Arena</span> is Here</h1>
+                <p class="lead mb-4 mx-auto" style="max-width: 600px;">
+                    Experience the thrill of competitive gaming. Join daily tournaments for your favorite mobile games, showcase your skills, and win real cash prizes. Your journey to esports glory starts now!
+                </p>
+                <a href="https://www.mediafire.com/file/k2xj9se2e9gnzx5/Epic_league.apk/file" class="btn btn-accent btn-lg">
+                    <i class="bi bi-download me-2"></i>Download & Start Playing
+                </a>
+                <div class="mt-3">
+                    <a href="https://www.mediafire.com/file/k2xj9se2e9gnzx5/Epic_league.apk/file" class="btn btn-secondary-custom">Get ₹10 FREE on Signup!</a>
+                </div>
+            </div>
+            <img src="https://i.ibb.co/tg5W5MJ/file-00000000f95c61faac55de9bfcaf23f0.png" alt="App Logo" class="hero-image fade-in-up" style="transition-delay: 0.2s;">
+        </div>
+    </section>
+
+    <main id="main">
+
+        <!-- ======= Game Slider Section ======= -->
+        <section id="games" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Tournaments for Your Favorite Games</h2>
+                    <p>We host daily matches for the most popular games in Nepal.</p>
+                </div>
+            </div>
+            <div class="swiper game-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="https://www.gamerji.com/img/games/BGMI.png" alt="BGMI"></div>
+                    <div class="swiper-slide"><img src="https://www.gamerji.com/img/games/FFM.png" alt="Free Fire Max"></div>
+                    <div class="swiper-slide"><img src="https://www.gamerji.com/img/games/Pubg_New_State.png" alt="PUBG New State"></div>
+                    <!-- Repeat for autoplay loop -->
+                    <div class="swiper-slide"><img src="https://www.gamerji.com/img/games/BGMI.png" alt="BGMI"></div>
+                    <div class="swiper-slide"><img src="https://www.gamerji.com/img/games/FFM.png" alt="Free Fire Max"></div>
+                    <div class="swiper-slide"><img src="https://www.gamerji.com/img/games/Pubg_New_State.png" alt="PUBG New State"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= How It Works Section ======= -->
+        <section id="how-it-works" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get Started in 3 Simple Steps</h2>
+                    <p>Joining the action on EPIC LEGUE is quick and easy.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="step-card w-100" data-step="01">
+                            <div class="step-icon"><i class="bi bi-cloud-download"></i></div>
+                            <h3>Download & Register</h3>
+                            <p>Get the app from our website, install it, and create your account in under a minute to start your gaming journey.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="step-card w-100" data-step="02">
+                        
